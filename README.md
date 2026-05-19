@@ -4,7 +4,7 @@
 >
 > **片长**：60 秒
 > **基调**：好莱坞级 CG 史诗短片，纯魔兽争霸世界观
-> **形式**：AI 生成（Midjourney + Veo 3 / Kling 2.5）+ 真人配音 + Suno 配乐
+> **形式**：AI 生成（即梦 Seedream 2.0 + 即梦 Seedance 2.0）+ 真人配音 + Suno 配乐
 > **主题**：英雄的史诗，是无数没有名字的人用同一种疲惫堆出来的
 
 ---
@@ -18,7 +18,7 @@
 | 02 | [docs/02_场景设计.md](docs/02_场景设计.md) | 5 大场景的地貌、建筑、道具、光照、色温 | 美术 / 画分镜 |
 | 03 | [docs/03_剧情与剧本.md](docs/03_剧情与剧本.md) | 三幕结构 + 情感曲线 + 18 镜头完整剧本 | 导演 / 剪辑 |
 | 04 | [docs/04_视听风格.md](docs/04_视听风格.md) | 摄影、调色、美术、字体、音乐、音效全规范 | 摄影 / 调色 / 声音 |
-| 05 | [docs/05_Prompt总表.md](docs/05_Prompt总表.md) | 18 镜头 × Midjourney + Veo 3 Prompt（可复制即用） | AI 操作员 |
+| 05 | [docs/05_Prompt总表.md](docs/05_Prompt总表.md) | 18 镜头 × Seedream 2.0 + Seedance 2.0 双 Prompt（可复制即用） | AI 操作员 |
 | 06 | [docs/06_音轨表.md](docs/06_音轨表.md) | 精确到 0.5 秒的 BGM / 对白 / 音效时间码 | 剪辑 / 混音 |
 | 07 | [docs/07_制片包.md](docs/07_制片包.md) | 排期、预算估算、资产清单、投放策略 | 制片 / 项目管理 |
 
@@ -63,6 +63,6 @@ aiduanpian/
 │   └── 07_制片包.md
 └── assets/                         # 实际生产资产存放（开工后）
     ├── references/                 # 视觉参考截图
-    ├── characters/                 # 角色一致性图（cref 用）
+    ├── characters/                 # 角色一致性图（Seedream 锚定图）
     └── scenes/                     # 场景关键帧
 ```

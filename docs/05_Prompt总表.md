@@ -1,651 +1,722 @@
-# 05 · Prompt 总表
+# 05 · Prompt 总表（Seedream 2.0 · Seedance 2.0 版）
 
-> 18 个镜头 × 2 套 Prompt（Midjourney 关键帧 + Veo 3 / Kling 视频生成）= 36 段可复制 Prompt。
-> 复制到对应工具，配合 cref 角色锚定图，即可开始抽卡。
-
----
-
-## 工具与版本说明
-
-| 用途 | 工具 | 版本 | 关键参数 |
-|------|------|------|---------|
-| 关键帧出图 | **Midjourney v7** | 2025.05+ | `--ar 21:9 --style raw --v 7` |
-| 角色一致性 | **MJ Character Reference** | `--cref [url] --cw 100` | 需先出 cref 锚定图 |
-| 视频生成（首选） | **Veo 3** | 2025 当前版 | 大场面、复杂运动 |
-| 视频生成（备选） | **Kling 2.5 Master** | 2025 当前版 | 中文场景、人物特写 |
-| 视频生成（备选） | **Runway Gen-4 Turbo** | 2025 当前版 | 复杂运镜 |
+> 18 个镜头 × 2 套 Prompt = 36 段可复制即用 Prompt。
+> **图像（关键帧）**：即梦 **Seedream 2.0 / 3.0**（中英双语）
+> **视频（图生视频 / 文生视频）**：即梦 **Seedance 2.0**
 
 ---
 
-## 通用风格尾缀（每个 Prompt 都加）
+## 一、工具与版本说明
 
-### Midjourney 通用尾缀
-
-```
-Warcraft 2016 movie cinematic style, painterly oil painting texture,
-hyperdetailed skin pores and individual hair strands,
-volumetric lighting with god rays and dust particles,
-8K, octane render, Greg Rutkowski concept art influence,
-shallow depth of field
---ar 21:9 --style raw --v 7
-```
-
-### Veo 3 / Kling 通用尾缀
-
-```
-Cinematic Warcraft movie style, 24fps film look,
-realistic physics, hyperdetailed textures,
-volumetric atmospheric lighting, no logos, no text overlay
-```
+| 用途 | 工具 | 关键能力 |
+|------|------|---------|
+| 角色锚定图 / 关键帧出图 | **即梦 Seedream 2.0 / 3.0** | 中英双语原生 prompt、subject 一致性、image-to-image 风格转换 |
+| 角色一致性 | **Seedream Image Reference**（参考图模式） | 上传角色锚定图作为 reference，权重 0.6–0.8 |
+| 图生视频（首选） | **Seedance 2.0** | 1080p 原生、多镜头叙事、首帧锁定、原生口型 / 音效一体生成 |
+| 视频参考运镜（可选） | Seedance 2.0 reference video | 上传一段 LOTR 镜头当运镜参考 |
 
 ---
 
-## 镜头 #1 · 黎明全景
+## 二、Prompt 范式（必读，否则废卡）
 
-### Midjourney
+### 1. Seedream 2.0 / 3.0 图像 Prompt 范式
+
 ```
-Extreme wide aerial shot of Durotar dawn warcamp outside Orgrimmar,
-red-orange dusty plains stretching to horizon,
-massive Horde wolf-head black-red banner flapping in foreground (6 meters tall),
-black tribal yurts, bone totems, wooden palisades with watch horn-tower,
-silhouette of Orgrimmar massive walls and spires in distant haze,
-blood-red rising sun on horizon at low angle,
-volumetric morning mist clinging to ground,
-warm 3800K dawn color temperature, low-angle dramatic backlight,
-+ [通用尾缀]
+[主体] + [服装/道具/特征] + [动作/姿态] + [环境/场景]
++ [构图 + 焦段 + 视角] + [光照/色温/氛围]
++ [风格关键词] + [质量词]
 ```
 
-### Veo 3
+支持中英文混合写。建议主体描述用中文（Seedream 中文理解强），技术词用英文。
+
+### 2. Seedance 2.0 视频 Prompt 范式（官方推荐六段式）
+
 ```
-Extreme wide aerial shot of Durotar dawn warcamp,
-camera slowly pushes forward 10% over 3 seconds,
-massive Horde banner flapping in wind in foreground,
-sun rising on horizon, mist drifting across red plains,
-zero camera shake, locked tripod feel,
-+ [通用尾缀]
+[Subject 主体] → [Action 动作] → [Camera Move 镜头运动]
+→ [Style 风格] → [Timing 时序] → [Audio / End Frame 音频或末帧]
 ```
+
+每段用一句完整中文（或中英混合）描述，**冒号后必须紧跟内容**。
+Seedance 2.0 支持原生音频生成，所以 Audio 段不要省略。
 
 ---
 
-## 镜头 #2 · 号角手
+## 三、通用风格尾缀（每个 Prompt 末尾必加）
 
-### Midjourney
+### Seedream 2.0 图像通用尾缀
+
 ```
-Medium shot, low angle 15 degrees up,
-female orc horn-blower standing on watchtower top at dawn,
-deep green skin, wolf-tooth necklace, leather armor,
-cheeks puffed blowing massive bronze ornate war horn,
-white breath visible in cold dawn air,
-backlit by rising sun creating rim light on her silhouette,
-sky behind painted gold and pink,
-+ [通用尾缀]
+Photorealistic CGI rendering, Industrial Light & Magic / WETA Digital VFX quality,
+PBR materials with subsurface scattering on green orc skin,
+visible skin pores, individual hair strands, sweat sheen, weathered realism,
+faithful Warcraft orc anatomy: long jutting lower jaw, prominent tusks growing upward,
+thick brow ridge, broad flat nose, olive-to-emerald green skin tone,
+Horde aesthetics: red-black wolf-head iconography, battle-worn gear,
+shot on ARRI Alexa Mini LF, 35mm anamorphic prime lens, 21:9 cinematic framing,
+volumetric atmospheric haze, floating dust particulates,
+inspired by Lord of the Rings ILM and Avatar Way of Water visual fidelity,
+NOT painterly, NOT oil painting, NOT cartoon, NOT Blizzard stylized CG, NOT plastic skin,
+8K hyperdetailed, cinematic film grain
 ```
 
-### Veo 3
+### Seedance 2.0 视频通用 Style 段
+
 ```
-Medium low-angle shot of female orc horn-blower on watchtower,
-she takes a deep breath then blows the war horn for 2 seconds,
-white breath cloud expands in dawn air,
-camera completely static,
-+ [通用尾缀]
+风格：Photorealistic live-action CGI in the fidelity of Lord of the Rings and
+Avatar Way of Water, ARRI Alexa cinematic film look with anamorphic 21:9 framing,
+faithful Warcraft orc anatomy and Horde aesthetic, PBR materials with subsurface
+scattering, weathered war-worn realism, volumetric atmosphere with dust particulates,
+NOT cartoon, NOT painterly, NOT Blizzard stylized
 ```
 
 ---
 
-## 镜头 #3 · A 线 · 苦工领斧（跟拍）
+## 四、抽卡前准备（重要）
 
-### Midjourney
+### 角色一致性工作流（Seedream 流程）
+
+1. **第一步**：用下面的"角色锚定图"prompt（在 [01_角色设计.md](01_角色设计.md) 已给出）出 6 张候选，挑 1 张存为 `assets/characters/grosh_ref_v1.png`、`lokra_ref_v1.png`
+2. **第二步**：所有后续场景图，在 Seedream 里**上传锚定图作为 Image Reference**，权重设为 0.7
+3. **第三步**：Seedance 2.0 视频生成时，**上传 Seedream 出的关键帧作为首帧**
+
+> Seedream 不像 Midjourney 用 `--cref`，而是直接在 UI 里挂图像参考。
+> 走 API 时使用 `reference_image` 参数 + `reference_strength: 0.7`。
+
+---
+
+## 五、18 镜头 Prompt 总表
+
+---
+
+### 镜头 #1 · 黎明全景
+
+#### Seedream 2.0 关键帧
 ```
-Steadicam tracking medium shot from rear-side,
-line of orc peons receiving lumber axes from camp armory at dawn,
-main character Grosh (cref) in middle of line,
-he extends scarred hand to take worn lumber axe with rag-wrapped handle,
-weighs it, hoists onto left shoulder,
-red dust kicked up by bare feet, dim torch light from armory,
-queue of similar-looking peons stretching back,
-+ [通用尾缀]
---cref [格罗什锚定图URL] --cw 100
+极远景航拍俯瞰，杜隆塔尔黎明红土荒原，地平线一轮血色朝阳贴地升起，
+前景一面 6 米高巨大的部落黑底红边狼头旗在风中猎猎作响，旗杆为粗糙裂纹木质，
+营地零星黑色毡帐 + 骨刺图腾 + 木栅栏 + 号角塔散布，
+中远景晨雾贴地流动，远处奥格瑞玛巨型城墙剪影 + 尖塔轮廓藏于薄雾中，
+24mm 广角，超低角度仰拍接俯拍过渡构图，体积晨光雾气穿透感，
+暖色温 3800K，朝阳逆光镶金边，
++ [图像通用尾缀]
 ```
 
-### Veo 3
+#### Seedance 2.0 视频
 ```
-Steadicam tracking shot following orc peon Grosh from rear-side at 2 meter distance,
-he walks forward in queue, receives an axe, hoists it onto left shoulder,
-camera follows smoothly without shake for 3 seconds,
-red dust particles in the air, dawn warm light,
-+ [通用尾缀]
+Subject 主体：杜隆塔尔黎明红土荒原全景，6 米高的部落狼头旗在风中猎猎，
+营地黑色毡帐与远处奥格瑞玛城墙剪影
+Action 动作：旗帜在晨风中持续摆动，地表晨雾缓缓流动，朝阳从地平线缓慢升高
+Camera Move 镜头：缓慢推镜，3 秒内从 100% 推到 90%，绝对零晃动锁定三脚架感
+Style 风格：[视频通用 Style 段]
+Timing 时序：3 秒，恒定速度
+Audio 音频：远处低长号角声 + 旷野风声 + 旗帜布料拍打声
 ```
 
 ---
 
-## 镜头 #4 · B 线 · 战士佩刀（跟拍）
+### 镜头 #2 · 号角手
 
-### Midjourney
+#### Seedream 2.0 关键帧
 ```
-Steadicam tracking medium shot from front-side (mirror of #3),
-line of orc warriors receiving two-handed war axes from same camp armory at dawn,
-main character Lok'ra (cref) at front of line,
-he takes battle-worn war axe with 4 chipped notches on blade,
-swings it once, hoists onto right shoulder,
-small leather pouch at his belt visible,
-iron boots stomping in rhythm, dim torch light,
-queue of similar warriors stretching back,
-+ [通用尾缀]
---cref [洛卡锚定图URL] --cw 100
+中景仰拍 15 度，营地号角塔顶端站着一名中年女兽人号角手，
+皮肤深翡翠绿、戴狼牙项链、束发、皮护腕，
+她鼓腮吹响一支 1 米长的铜制雕花战号，
+冷晨空气中她口中喷出明显白雾，
+朝阳从右后方逆光给她剪上金色边光，
+天空被晨光染金粉，远处营帐顶轮廓可见，
+35mm 镜头，浅景深背景轻虚化，色温 4000K，
++ [图像通用尾缀]
 ```
 
-### Veo 3
+#### Seedance 2.0 视频
 ```
-Steadicam tracking shot following orc warrior Lok'ra from front-side at 2 meter distance,
-he walks forward, receives a war axe, swings it once, hoists onto right shoulder,
-iron boots stomping in unified rhythm,
-camera follows smoothly without shake for 3 seconds,
-+ [通用尾缀]
-```
-
----
-
-## 镜头 #5 · 镜像特写 · 双手握紧
-
-### Midjourney 5A
-```
-Extreme close-up macro shot of orc peon's calloused weathered hand
-gripping rag-wrapped wooden axe handle,
-knuckles whitening from grip pressure,
-rag fibers and wood grain visible in detail,
-warm 3800K backlight from rising sun,
-shallow depth of field with axe handle in razor focus,
-+ [通用尾缀]
-```
-
-### Midjourney 5B（与 5A 完全相同的构图）
-```
-Extreme close-up macro shot of orc warrior's scarred battle-worn hand
-gripping leather-wrapped war axe shaft,
-knuckles whitening from grip pressure,
-leather wear marks and metal rivets visible in detail,
-warm 3800K backlight from rising sun,
-shallow depth of field with axe shaft in razor focus,
-+ [通用尾缀]
-```
-
-### Veo 3（两镜分别抽卡）
-```
-Extreme macro close-up of [orc peon's hand on axe handle / orc warrior's hand on war axe shaft],
-fingers slowly tighten over 1 second,
-camera completely static, very shallow depth of field,
-+ [通用尾缀]
+Subject 主体：号角塔顶的中年女兽人号角手，皮肤深翡翠绿、狼牙项链、皮护腕
+Action 动作：她深吸一口气，举起铜制战号鼓腮吹响，号角声拉至最高音持续 1.5 秒，
+口中白雾在晨光中扩散
+Camera Move 镜头：完全静止，仰角 15 度，无任何运动
+Style 风格：[视频通用 Style 段]
+Timing 时序：2 秒
+Audio 音频：号角长鸣（升至最高音）+ 风声 + 远处营地低语
 ```
 
 ---
 
-## 镜头 #6 · 部落出征大场面 ★ CG 高潮 1
+### 镜头 #3 · A 线 · 苦工领斧（跟拍）
 
-### Midjourney
+#### Seedream 2.0 关键帧
 ```
-Massive epic wide shot of Horde army marching out of Orgrimmar gates at dawn,
-camera angle starts at ground level then cranes upward to bird's eye,
-thousands of orc warriors, wolf riders, raptors, wyvern flyers in sky,
-red banners with black wolf head sigil flapping in wind,
-red dusty plains of Durotar, blood-red rising sun on horizon,
-dust trails behind cavalry charging forward,
-Lord of the Rings Rohan charge composition,
-Blizzard cinematic style scale,
-+ [通用尾缀]
+Steadicam 跟拍中景，从主角侧后方约 2 米距离，
+一队兽人苦工在黎明营地军械库前排队领取磨损的劈柴斧，队列延伸至画面深处，
+主角格罗什（参考锚定图）站在队列中段：橄榄绿皮肤、左眉骨疤、独辫、粗麻无袖短褂、铁腰带、赤脚缠麻布，
+他伸出粗糙布满老茧的右手接过斧头，掂了掂分量准备扛上左肩，
+军械库内昏暗火把光从斜后方打出，前景红土被赤脚踩起阵阵浮尘，
+35mm 镜头，浅景深，环境暖光 3800K + 火把橙光点缀，
++ [图像通用尾缀]
 ```
 
-### Veo 3 ★ 这一镜需要砸 30+ 次抽卡
+#### Seedance 2.0 视频
 ```
-Epic Horde army marching out of Orgrimmar at dawn,
-camera starts at ground level tracking a charging wolf rider,
-then dramatically cranes upward over 4 seconds revealing
-thousands of warriors stretching to horizon,
-banners snapping in wind, dust trail behind cavalry,
-wyvern flyers visible in upper sky,
-slow motion at peak of camera ascent (60fps look),
-warm orange dawn lighting, epic scale,
-inspired by Lord of the Rings Rohan charge,
-+ [通用尾缀]
+Subject 主体：兽人苦工格罗什（橄榄绿皮、左眉疤、独辫、粗麻短褂、赤脚），
+身处黎明营地军械库前苦工领取队列中段
+Action 动作：他向前迈两步，伸出右手接过劈柴斧，掂量一下重量，扛上左肩，
+继续随队列前行
+Camera Move 镜头：Steadicam 跟拍，从主角侧后方 2 米距离平稳跟随，
+肩高视角，跟随时无晃动只有缓慢平移
+Style 风格：[视频通用 Style 段]
+Timing 时序：3 秒，恒定速度
+Audio 音频：金属斧头交接声 × 1 + 苦工沙哑低语 "Yes？" + 集体赤脚踏红土声 + 军械库内远火把噼啪
 ```
 
 ---
 
-## 镜头 #7 · 林场大场面 ★ CG 高潮 2
+### 镜头 #4 · B 线 · 战士佩刀（跟拍）
 
-### Midjourney
+#### Seedream 2.0 关键帧
 ```
-High-angle bird's eye view of massive Horde lumber camp and open-pit gold mine,
-hundreds of orc peons chopping giant red-bark trees in unified rhythm,
-wood chips flying everywhere, sweat glistening,
-stepped open-pit gold mine with wooden scaffolding,
-miners hauling buckets, piles of fresh-cut logs,
-gold crates with Horde sigil stacked,
-god rays piercing through tree canopy creating golden dust shafts,
-composition inspired by LOTR Isengard pit scene,
-warm 5500K golden hour lighting,
-+ [通用尾缀]
+Steadicam 跟拍中景（与 #3 严格镜像），从主角侧前方约 2 米距离，
+一队兽人战士在同一军械库前排队领取双手钢制战斧，铁靴整齐踏地如鼓点，
+主角洛卡（参考锚定图）站在队列前段：深翡翠绿皮、右脸部族刺青、束顶髻、磨损黑铁板甲（凹陷哑光）、灰狼皮披肩、皮护胫铁靴，
+他双手接过一柄刃口有 4 个缺口的双手战斧，单手抡了一圈展示重量，扛上右肩，
+腰间系一只小皮袋（暗示装风干肉干），
+35mm 镜头，浅景深，环境暖光 3800K + 火把橙光，
++ [图像通用尾缀]
 ```
 
-### Veo 3 ★ 必须与 #6 等量级，否则立意垮
+#### Seedance 2.0 视频
 ```
-High-angle aerial shot of massive Horde lumber camp,
-camera holds static for 2 seconds then slowly pushes down toward one work zone,
-hundreds of orc peons chopping trees in unified rhythm,
-wood chips flying in slow motion peak,
-golden god rays through tree canopy,
-warm afternoon lighting,
-visual rhythm matching military marching tempo,
-+ [通用尾缀]
+Subject 主体：兽人战士洛卡（深绿皮、右脸纹身、顶髻、磨损黑铁板甲、灰狼披肩、铁靴），
+身处同一军械库前战士领取队列前段
+Action 动作：他向前迈一步，双手接过刃口有 4 个缺口的双手战斧，单手抡一圈展示重量，
+扛上右肩，铁靴用力踏地一下
+Camera Move 镜头：Steadicam 跟拍，从主角侧前方 2 米距离平稳跟随（与 #3 严格镜像），
+肩高视角，无晃动只有缓慢平移
+Style 风格：[视频通用 Style 段]
+Timing 时序：3 秒，恒定速度
+Audio 音频：重型铁器交接声（更沉）+ 整齐铁靴踏地节奏 × 4 + 远处战鼓轻起 + 男声合唱低音铺底
 ```
 
 ---
 
-## 镜头 #8 · 镜像砍击 ★★★ 全片核心镜
+### 镜头 #5 · 镜像特写 · 双手握紧（核心镜像宣告）
 
-### Midjourney 8A
+#### Seedream 2.0 关键帧 5A（苦工手）
 ```
-Extreme close-up macro shot at the exact moment
-a worn lumber axe blade bites into ancient red-bark tree trunk,
-massive wood chip explosion frozen mid-flight,
-golden hour backlight illuminating dust and chips,
-sweat droplet flying off Grosh's face into camera,
-85mm macro lens look, warm 5500K golden lighting,
-motion blur on axe head only,
-hyperdetailed bark texture and wood fibers,
-+ [通用尾缀]
+极近特写微距，85mm 微距镜头，
+苦工格罗什的右手正握紧劈柴斧木柄，
+镜头清晰看到关节因用力发白、青筋隆起、指甲嵌满黑泥、虎口老茧、皮肤毛孔分明、汗珠悬挂，
+木柄表面缠着褪色发黄破布，可见木纹裂纹和被汗水浸出的盐渍，
+背景为模糊的黎明朝阳金边，色温 3800K 暖橙光，
+极浅景深仅斧柄锋利对焦，
++ [图像通用尾缀]
 ```
 
-### Midjourney 8B（与 8A 同构图，换环境）
+#### Seedream 2.0 关键帧 5B（战士手，与 5A 完全相同构图）
 ```
-Extreme close-up macro shot at the exact moment
-a battle-worn war axe blade cleaves through human soldier's plate armor,
-massive blood mist explosion frozen mid-flight,
-cold twilight backlight illuminating mist and dust,
-sweat droplet flying off Lok'ra's face into camera,
-85mm macro lens look, cold 6500K teal-rust lighting,
-motion blur on axe head only,
-hyperdetailed armor scratches and chainmail,
-+ [通用尾缀]
+极近特写微距，85mm 微距镜头（与 5A 完全相同构图机位），
+战士洛卡的右手正握紧双手战斧的皮革缠柄，
+镜头清晰看到关节因用力发白、青筋隆起、布满旧战疤、虎口结茧、皮肤毛孔分明、汗珠悬挂，
+皮革柄表面有磨损发黑光泽 + 数枚锻铁铆钉 + 沾染干涸暗血迹，
+背景为模糊的黎明朝阳金边（与 5A 同色温），色温 3800K 暖橙光，
+极浅景深仅斧柄锋利对焦，
++ [图像通用尾缀]
 ```
 
-### Veo 3 8A
+#### Seedance 2.0 视频（5A 与 5B 分别抽卡，剪辑时叠化）
 ```
-Extreme macro close-up, 120fps slow motion,
-worn lumber axe biting into red-bark tree trunk,
-wood chips exploding outward in slow motion,
-sweat droplet flying off face,
-1.5 seconds, golden hour backlight,
-+ [通用尾缀]
-```
-
-### Veo 3 8B
-```
-Extreme macro close-up, 120fps slow motion,
-battle-worn war axe cleaving through plate armor,
-blood mist exploding outward in slow motion,
-sweat droplet flying off face,
-1.5 seconds, cold twilight backlight,
-+ [通用尾缀]
-```
-
-> 抽卡要点：8A 和 8B 必须**机位完全相同 + 慢动作速率完全相同**。
-> 出来的两段视频先在剪辑软件里叠化对比，构图重合度 ≥ 90% 才合格。
-
----
-
-## 镜头 #9 · 战士受伤
-
-### Midjourney
-```
-Medium shot, subtle handheld feel, 50mm,
-orc warrior Lok'ra on battlefield mid-battle,
-horizontal sword cut bleeding through gap in dented chest plate,
-he kneels on one knee, war axe shaft planted on ground for support,
-face mixed with sweat, blood, and dust,
-teeth clenched, eyes still sharp and defiant,
-he begins to slowly rise back up,
-cold 6500K twilight battlefield lighting, distant chaos blurred in background,
-+ [通用尾缀]
---cref [洛卡锚定图URL] --cw 100
-```
-
-### Veo 3
-```
-Medium shot of orc warrior wounded on battlefield,
-he kneels on one knee from injury, then slowly rises back to standing,
-subtle handheld camera shake,
-3 seconds total, cold blue battlefield lighting,
-+ [通用尾缀]
+Subject 主体：[苦工的右手握住缠破布的劈柴木斧柄 / 战士的右手握住缠皮革的钢战斧柄]
+Action 动作：手指从松到紧逐渐收拢，关节由皮色变白，1 秒内完成完整握紧动作
+Camera Move 镜头：完全锁定不动，85mm 微距特写，极浅景深仅斧柄一点对焦
+Style 风格：[视频通用 Style 段]
+Timing 时序：1 秒，从握到完全紧握
+Audio 音频：[木柄破布吱呀声 / 皮革握紧吱嘎声] + 战鼓节奏微微加密
 ```
 
 ---
 
-## 镜头 #10 · 苦工受伤（镜像）
+### 镜头 #6 · 部落出征大场面 ★ CG 高潮 1
 
-### Midjourney
+#### Seedream 2.0 关键帧
 ```
-Medium shot, subtle handheld feel, 50mm (mirror of #9),
-orc peon Grosh in lumber camp,
-fallen log struck his right shoulder, blood seeping through linen tunic,
-he kneels on one knee, lumber axe planted on ground for support,
-face mixed with sweat, dirt, and blood,
-teeth clenched, eyes weary but determined,
-he begins to slowly rise back up,
-warm 5500K golden lumber camp lighting, blurred peons working in background,
-+ [通用尾缀]
---cref [格罗什锚定图URL] --cw 100
-```
-
-### Veo 3
-```
-Medium shot of orc peon injured in lumber camp,
-he kneels on one knee from injury, then slowly rises back to standing,
-subtle handheld camera shake (matching #9 exactly),
-3 seconds total, warm golden lighting,
-+ [通用尾缀]
+极远景史诗大场面，从地面追拍仰角逐渐切到鸟瞰俯拍构图，
+数千名部落兽人大军从奥格瑞玛巨型城门蜂拥涌出，
+前排狼骑兵高速冲锋（巨大灰狼坐骑 + 兽人骑士 + 长矛），
+中段巨魔战士、兽人步兵密集方阵，
+天空有双足飞龙编队（玩家 wyvern 形象）穿云盘旋，
+后排攻城车与酋长卫队压阵，
+红土高原被踏起漫天烟尘，地面血色朝阳逆光，
+无数部落黑底红边狼头旗如海浪起伏，
+《魔戒》洛汗冲锋构图直接致敬，
+24mm 广角史诗远景，色温 3800K 暖橙朝阳，
++ [图像通用尾缀]
 ```
 
----
-
-## 镜头 #11 · 雷霆萨尔（彩蛋）
-
-### Midjourney
+#### Seedance 2.0 视频 ★ 重点抽卡，30 次起步
 ```
-Extreme wide low-angle shot of battlefield sky,
-massive vortex of dark storm clouds gathering,
-giant white-blue lightning bolt striking down from clouds,
-in the brief illuminated instant, distant silhouette of robed figure
-on a high ridge holding up double-handed war hammer,
-ONLY SILHOUETTE, NO FACE, backlit shape only,
-extreme distance making figure tiny but recognizable,
-cold 6500K storm lighting with bright blue lightning highlight,
-+ [通用尾缀]
-```
-
-### Veo 3
-```
-Extreme wide low-angle shot of stormy battlefield sky,
-storm clouds swirling, then a massive blue lightning bolt strikes down,
-in the lightning flash, distant silhouette of figure with hammer raised
-appears for 0.5 seconds on high ridge,
-no face visible, only silhouette,
-3 seconds total, cold storm lighting,
-+ [通用尾缀]
+Subject 主体：数千名部落兽人大军从奥格瑞玛巨型城门列队冲出，
+前排狼骑兵 + 中段步兵方阵 + 后排攻城车 + 天空双足飞龙编队，
+部落黑底红边狼头旗在烟尘中起伏
+Action 动作：前排狼骑兵从画面冲入，整军以洛汗冲锋之势奔出城门，
+旗帜剧烈摆动，烟尘从马蹄扬起在空中拖曳，飞龙俯冲掠过镜头
+Camera Move 镜头：起始低机位贴地跟拍一名狼骑兵冲锋 1 秒，
+然后镜头戏剧性地向上飞升 + 后退展开 3 秒，
+最终升至 200 米鸟瞰看到完整军阵延伸至地平线
+Style 风格：[视频通用 Style 段]
+Timing 时序：4 秒，慢动作 60fps 在镜头上升顶峰瞬间
+Audio 音频：千人战吼震天 + 战鼓密集 + 狼嚎 + 飞龙振翅 + 马蹄踏地 + 史诗管弦乐进入主题
 ```
 
 ---
 
-## 镜头 #12 · 苦工抬头看雷雨
+### 镜头 #7 · 林场大场面 ★ CG 高潮 2
 
-### Midjourney
+#### Seedream 2.0 关键帧
 ```
-Medium close-up low-angle shot of orc peon Grosh in lumber camp,
-he has lowered his axe, looking up at sky for the first time,
-distant lightning briefly flashing in his eyes,
-first raindrops falling onto his weathered face,
-he blinks slowly,
-warm 5500K lumber camp light transitioning to cooler raincloud light,
-+ [通用尾缀]
---cref [格罗什锚定图URL] --cw 100
-```
-
-### Veo 3
-```
-Medium low-angle shot of orc peon Grosh,
-he slowly raises his head looking upward,
-raindrops begin falling on his face, he blinks once,
-camera tilts up gently following his gaze,
-2 seconds, transitioning lighting,
-+ [通用尾缀]
+高空鸟瞰俯拍，杜隆塔尔大型林场 + 露天阶梯式金矿同框，
+画面规模与 #6 等量级（这是关键），
+上百名兽人苦工在巨大红木林中以整齐节奏挥斧伐木，木屑漫天飞舞，
+左侧露天金矿坑层层叠叠的木质支架 + 矿车 + 金箱，矿工攀爬其间，
+正午金光从树冠斜射下形成丁达尔光柱，金黄色尘雾悬浮空中，
+新伐区域木桩林立、原木堆积如山，劳动节奏与远处战场冲锋节奏视觉对应，
+《魔戒》艾辛格炼炉俯拍构图致敬，
+35mm 高空镜头，色温 5500K 金黄正午光，
++ [图像通用尾缀]
 ```
 
----
-
-## 镜头 #13 · 苦工扛金箱
-
-### Midjourney
+#### Seedance 2.0 视频 ★ 必须与 #6 等量级否则立意垮
 ```
-Medium full-body tracking shot from side,
-orc peon Grosh hoisting massive Horde-sigil gold crate larger than himself,
-walking through muddy red Durotar earth from gold mine toward camp,
-muscles trembling under load, every step deep into mud,
-toes gripping mud, sweat soaking through linen tunic,
-he does NOT look up, only heavy breathing,
-warm 5500K late afternoon lighting, dust kicked up,
-+ [通用尾缀]
---cref [格罗什锚定图URL] --cw 100
-```
-
-### Veo 3
-```
-Side tracking shot of orc peon walking with massive gold crate on shoulders,
-camera tracks alongside him then slowly pans down to feet,
-each step sinking deep into mud,
-muscles trembling, heavy breathing,
-3 seconds, warm afternoon light,
-+ [通用尾缀]
+Subject 主体：杜隆塔尔大型林场 + 阶梯式金矿全景，上百名兽人苦工在红木林中挥斧伐木，
+矿工在金矿支架间攀爬运箱，木屑与金尘漫天
+Action 动作：所有苦工以整齐的节拍挥斧（节拍与 #6 战士冲锋节拍同步），
+镜头持续 2 秒高空俯拍后向下推近聚焦于其中一个工区，看清苦工身上肌肉颤动
+Camera Move 镜头：起始 200 米高空鸟瞰俯拍 2 秒静止，
+然后镜头垂直向下推近 + 略前倾 2 秒至 50 米中高空，最后落在一个工区上方
+Style 风格：[视频通用 Style 段]
+Timing 时序：4 秒，慢动作 60fps 在木屑爆开瞬间
+Audio 音频：千斧齐落如战鼓 + 兽人沙哑劳动号子 + 金石撞击 + 远处战场战吼隐约 + 史诗主题持续
 ```
 
 ---
 
-## 镜头 #14 · 战士背伤兵（镜像）
+### 镜头 #8 · 镜像砍击 ★★★ 全片核心镜
 
-### Midjourney
+#### Seedream 2.0 关键帧 8A（劈树木屑）
 ```
-Medium full-body tracking shot from side (mirror of #13),
-orc warrior Lok'ra carrying unconscious wounded comrade on his back,
-walking through muddy battlefield from corpse pile toward camp,
-muscles trembling under weight, every step deep into mud,
-comrade's bloody arm dangling and swaying with each step,
-he does NOT look up, only heavy breathing,
-cold 6500K late afternoon battlefield lighting, smoke in background,
-+ [通用尾缀]
---cref [洛卡锚定图URL] --cw 100
+极近特写微距，85mm 镜头，120fps 升格慢动作冻帧瞬间，
+苦工格罗什的劈柴斧刃刚刚切入古老红木树干的零点几秒，
+木屑如爆炸般向镜头方向四散飞溅，每一片木屑边缘可见纤维撕裂细节，
+格罗什的脸部进入画面右上角焦外，眉骨疤痕旁一颗汗珠飞向镜头，
+背景金黄色丁达尔光柱穿透树冠，
+浅景深仅斧刃 + 木屑核心对焦，
+色温 5500K 暖金林场光，
++ [图像通用尾缀]
 ```
 
-### Veo 3
+#### Seedream 2.0 关键帧 8B（斩敌血雾，与 8A 完全相同构图）
 ```
-Side tracking shot of orc warrior carrying wounded comrade on back,
-camera tracks alongside him then slowly pans down to feet (matching #13 exactly),
-each step sinking deep into mud,
-comrade's arm swaying with each step,
-3 seconds, cold battlefield light,
-+ [通用尾缀]
+极近特写微距，85mm 镜头，120fps 升格慢动作冻帧瞬间（与 8A 完全相同机位与节奏点），
+战士洛卡的双手战斧刃刚刚劈穿一名人族士兵的板甲胸口的零点几秒，
+血雾如喷洒般向镜头方向四散飞溅，每一滴血珠边缘可见空气阻力变形，
+洛卡的脸部进入画面右上角焦外，纹身脸颊一颗汗珠飞向镜头，
+背景冷青色烟尘 + 凌乱断旗，
+浅景深仅斧刃 + 血雾核心对焦，
+色温 6500K 冷青战场光 + 血锈红高光，
++ [图像通用尾缀]
+```
+
+#### Seedance 2.0 视频 8A
+```
+Subject 主体：苦工的劈柴斧正在切入古老红木树干，斧刃陷入约 1/3
+Action 动作：从斧刃接触树皮开始，120fps 极慢动作展开木屑爆开过程，
+木屑如颗粒爆炸向镜头方向飞散，每一片清晰可见
+Camera Move 镜头：85mm 微距完全锁定不动，极浅景深，无任何相机运动
+Style 风格：[视频通用 Style 段]，超高速摄影质感
+Timing 时序：1.5 秒，全程 120fps 升格
+Audio 音频：劈砍木声从 attack 起音开始（这一帧的攻击声将与 8B 的金属撕裂声做音桥过渡）
+```
+
+#### Seedance 2.0 视频 8B
+```
+Subject 主体：战士的双手战斧正在劈穿人族士兵的板甲胸口，斧刃陷入约 1/3
+Action 动作：从斧刃接触板甲开始，120fps 极慢动作展开血雾喷洒过程，
+血珠如颗粒爆炸向镜头方向飞散，板甲金属变形细节清晰
+Camera Move 镜头：85mm 微距完全锁定不动（与 8A 完全相同机位），极浅景深，无运动
+Style 风格：[视频通用 Style 段]，超高速摄影质感
+Timing 时序：1.5 秒，全程 120fps 升格
+Audio 音频：金属穿透板甲的沉闷撕裂声从 attack 起音开始（与 8A 末端的劈砍木声做音桥拼接）
+```
+
+> ⚠️ 抽卡要点：8A 和 8B 必须**机位/焦段/慢速度完全相同**。导出后两段并排对比，构图重合度需 ≥ 90%。
+
+---
+
+### 镜头 #9 · 战士受伤
+
+#### Seedream 2.0 关键帧
+```
+中景偏近，50mm 镜头，轻微手持感构图，
+战士洛卡身处战场中段，前胸板甲缝隙被一柄人族剑划开一道横向裂口，
+鲜血从裂口处缓缓渗出污染胸甲，
+他单膝跪地，双手紧握战斧斧柄拄于地面撑住身体，
+脸上汗水、血迹、灰尘混合成战场印记，
+牙关紧咬獠牙泛白光，眼神依然锐利不屈服，正在缓慢起身的瞬间，
+冷青战场光 6500K，远处战斗群像虚化为模糊运动光斑，
++ [图像通用尾缀]
+```
+
+#### Seedance 2.0 视频
+```
+Subject 主体：战士洛卡身处战场中段，前胸板甲被划开渗血，单膝跪地拄战斧
+Action 动作：他先沉重地呼吸一次（胸口起伏），然后牙关紧咬，
+双手用力推动战斧撑地，缓慢但坚定地从单膝跪姿重新起立至站立姿态
+Camera Move 镜头：50mm 中景，极轻微的手持晃动感（不超过 5%），
+保持在洛卡眼平线高度
+Style 风格：[视频通用 Style 段]
+Timing 时序：3 秒，前 1 秒静止呼吸，后 2 秒缓慢起身
+Audio 音频：闷哼一声（短促压抑）+ 急促沉重呼吸 + 远处战吼持续 + 弦乐拉长进入坚持段
 ```
 
 ---
 
-## 镜头 #15 · 战士黄昏剪影 ★ 海报候选
+### 镜头 #10 · 苦工受伤（与 #9 严格镜像）
 
-### Midjourney
+#### Seedream 2.0 关键帧
 ```
-Wide cinematic anamorphic shot of orc warrior silhouetted against
-massive orange sunset on horizon,
-standing on Barrens battlefield ridge path, leaning on two-handed war axe,
-long shadow cast forward toward camera,
-gentle wind blowing wolf pelt and warrior topknot,
-distant Kalimdor mountain ridges, sparse acacia trees,
-The Last Samurai composition,
-warm 4200K twilight color, 85mm long lens,
-black silhouette + orange-red sky composition only,
-+ [通用尾缀]
---cref [洛卡锚定图URL] --cw 100
+中景偏近，50mm 镜头，轻微手持感构图（与 #9 完全相同机位与构图框架），
+苦工格罗什身处林场中段，右肩被一根滚落的原木砸中，
+鲜血从粗麻短褂下渗出沾染衣料一片暗红，
+他单膝跪地，双手紧握劈柴斧柄拄于地面撑住身体，
+脸上汗水、土灰、血迹混合成劳作印记，
+牙关紧咬獠牙泛白光，眼神疲惫但坚定不屈服，正在缓慢起身的瞬间，
+暖金林场光 5500K，远处苦工群像虚化为模糊光斑，
++ [图像通用尾缀]
 ```
 
-### Veo 3
+#### Seedance 2.0 视频
 ```
-Wide static shot of orc warrior silhouetted against massive sunset,
-camera completely locked off,
-he stands leaning on war axe, wind blowing his topknot and pelt gently,
-4 seconds of stillness, only wind movement,
-warm twilight light, anamorphic cinematic feel,
-+ [通用尾缀]
-```
-
----
-
-## 镜头 #16 · 苦工黄昏剪影（镜像）★ 海报候选
-
-### Midjourney
-```
-Wide cinematic anamorphic shot of orc peon silhouetted against
-massive orange sunset on horizon (SAME composition as #15),
-standing on Durotar lumber camp path, leaning on worn lumber axe,
-long shadow cast forward toward camera,
-gentle wind blowing single thick braid,
-distant Durotar mountain ridges, sparse trees,
-The Last Samurai composition,
-warm 4200K twilight color, 85mm long lens,
-black silhouette + orange-red sky composition only,
-+ [通用尾缀]
---cref [格罗什锚定图URL] --cw 100
-```
-
-### Veo 3
-```
-Wide static shot of orc peon silhouetted against massive sunset,
-camera completely locked off (matching #15 exactly),
-he stands leaning on lumber axe, wind blowing his braid gently,
-3 seconds of stillness, only wind movement,
-warm twilight light, anamorphic cinematic feel,
-+ [通用尾缀]
-```
-
-> 出图后的检查方式：把 #15 和 #16 在 Photoshop 里叠加 50% 透明度，
-> 人物位置应该几乎重合。如果不重合，重出图。
-
----
-
-## 镜头 #17 · 篝火 · 递肉干 ★★★ 情感最高点
-
-### Midjourney 17A（中景）
-```
-Cinematic medium shot at orc Horde campfire night,
-massive 1.5m diameter stone fire pit with 1m tall flames,
-embers floating upward into deep blue starry sky,
-warriors and peons sitting on log benches around fire,
-warrior Lok'ra walking through with wooden bowl,
-he stops, half his face lit warm orange firelight, half in shadow,
-warm 1900K firelight + cool 7000K background moonlight (complementary),
-volumetric smoke heat distortion above flames,
-+ [通用尾缀]
---cref [洛卡锚定图URL] --cw 100
-```
-
-### Midjourney 17B（双人特写）
-```
-Cinematic close-up two-shot at campfire,
-warrior Lok'ra (left) extending hand with strip of dried jerky,
-peon Grosh (right) looking up with stunned expression, eyes wet but no tears,
-firelight from below illuminating both faces from beneath,
-half-warm half-shadow chiaroscuro lighting on each face,
-warm 1900K firelight + cool 7000K background,
-shallow depth of field, 85mm portrait lens,
-hyperdetailed face textures showing weariness, scars, dirt,
-+ [通用尾缀]
---cref [洛卡 + 格罗什锚定图组合] --cw 100
-```
-
-### Veo 3
-```
-Two-part shot at orc campfire at night:
-First 2s: medium shot, warrior walks past peons, stops, turns back to look,
-Then 3s: close-up two-shot, warrior reaches into pouch, takes out jerky strip,
-extends it slowly toward peon who looks up stunned, takes it with both hands,
-camera slow push-in through both shots,
-warm firelight on faces, cool blue night sky background,
-embers floating, gentle heat distortion,
-intimate emotional moment, no dialog yet,
-+ [通用尾缀]
+Subject 主体：苦工格罗什身处林场中段，右肩渗血，单膝跪地拄劈柴斧
+Action 动作：他先沉重地呼吸一次（胸口起伏，与 #9 同步节奏），然后牙关紧咬，
+双手用力推动斧柄撑地，缓慢但坚定地从单膝跪姿重新起立至站立姿态
+Camera Move 镜头：50mm 中景，极轻微的手持晃动感（与 #9 完全相同），
+保持在格罗什眼平线高度
+Style 风格：[视频通用 Style 段]
+Timing 时序：3 秒，前 1 秒静止呼吸，后 2 秒缓慢起身（与 #9 节奏完全对齐）
+Audio 音频：闷哼一声（与 #9 同样的音调和时长）+ 急促沉重呼吸 + 远处千斧齐落 + 弦乐持续坚持段
 ```
 
 ---
 
-## 镜头 #18 · 双人台词
+### 镜头 #11 · 雷霆萨尔（彩蛋）
 
-### Midjourney 18A
+#### Seedream 2.0 关键帧
 ```
-Side profile two-shot at campfire close-up,
-peon Grosh (left) just bit into jerky, looks at warrior, grins showing tusks,
-warrior Lok'ra (right) returning the smile, nodding slightly,
-firelight glinting on tusks and wet eyes,
-warm 1900K close intimate lighting,
-85mm portrait lens, shallow depth of field,
-+ [通用尾缀]
-```
-
-### Midjourney 18B
-```
-Side profile two-shot at campfire close-up,
-peon and warrior raising their food/water-skins toward each other,
-brief tap touching like brothers' toast,
-firelight glinting between them,
-warm 1900K, dramatic but warm,
-85mm portrait lens,
-+ [通用尾缀]
+极远景仰角，35mm 镜头，
+战场上空巨大乌云汇聚成漩涡状（开始旋转感），
+一道巨型白蓝色闪电从云层中心垂直劈下贯穿画面，
+在闪电照亮的瞬间，最远景一座断岩高坡上隐约浮现一个剪影：
+双手举起战锤的高大身影，毛皮披风在风中翻飞，
+仅黑色剪影 + 闪电光晕背景，绝对不显示任何面部细节，
+冷青风暴 6500K + 闪电瞬间高光蓝白 12000K，
++ [图像通用尾缀]
 ```
 
-### Veo 3
+#### Seedance 2.0 视频
 ```
-Side profile two-shot at campfire:
-peon bites jerky, looks at warrior, grins showing tusks (1.5s),
-warrior smiles back, nods (1.5s),
-they raise food and water-skin and tap them together (1s),
-intimate firelight, no camera movement except very slow push,
-no dialog audio (will be added in post),
-+ [通用尾缀]
+Subject 主体：战场乌云漩涡 + 远景断岩高坡的双手举锤剪影（萨尔暗示，仅剪影不露面）
+Action 动作：开场 1.5 秒乌云持续汇聚旋转，然后一道白蓝色巨型闪电从云中垂直劈下，
+在闪电照亮的 0.5 秒瞬间剪影显现，闪电消退后剪影没入黑暗
+Camera Move 镜头：完全静止仰角 35mm，无任何相机运动
+Style 风格：[视频通用 Style 段]，强对比闪电高光
+Timing 时序：3 秒（1.5s 蓄势 + 0.5s 闪电 + 1s 余响）
+Audio 音频：风暴风声蓄势 + 巨大雷鸣（峰值响度）+ 雷后 0.5 秒静音留白
 ```
 
 ---
 
-## 末段字幕
+### 镜头 #12 · 苦工抬头看雷雨
 
-字幕用 After Effects 制作，不需要 AI 生成。
-
+#### Seedream 2.0 关键帧
 ```
-0:58 - 0:59  "For the Horde."        (Trajan Pro Bold, white #FFFFFF, gold stroke #C9A961)
-0:59 - 1:00  "And for those who built it."
+中近景仰拍，50mm 镜头，
+苦工格罗什在林场中已放下手中的劈柴斧，
+他刚刚抬起头望向天空，这是全片他第一次抬头，
+远处战场方向的雷光余晖映在他脸上 + 第一滴雨水正落在他眼角和眉骨上，
+他眨了眨眼，眼神由麻木开始有了一丝触动，
+背景林场金光被雨云遮蔽渐转灰蓝，色温从 5500K 缓慢转向 5800K，
++ [图像通用尾缀]
+```
 
-中文版：
-0:58 - 0:59  "为了部落。"             (思源宋体 Heavy, white #FFFFFF, gold stroke #C9A961)
-0:59 - 1:00  "也为了筑起部落的他们。"
+#### Seedance 2.0 视频
+```
+Subject 主体：苦工格罗什在林场中放下斧头，刚刚抬起头望向天空
+Action 动作：他先放下斧头，然后从低头到完全抬头共 1 秒，
+雨点开始落在他脸上，他眨眼一次，眼神从麻木变为触动
+Camera Move 镜头：50mm 中近景仰角，镜头随他抬头动作微微上仰跟随，无晃动
+Style 风格：[视频通用 Style 段]
+Timing 时序：2 秒
+Audio 音频：远雷余响（明显比 #11 弱）+ 雨点落在皮肤的轻响 + 弦乐升高一个音
 ```
 
 ---
 
-## 抽卡操作建议
+### 镜头 #13 · 苦工扛金箱
 
-### 抽卡顺序
+#### Seedream 2.0 关键帧
+```
+中全景侧拍，35mm 镜头，
+苦工格罗什扛着一只比自己头还高的部落徽记金箱（木箱铁包角 + 烙印狼头），
+正从金矿口一步一步踩着泥泞红土向营地方向走，
+肌肉因负重剧烈颤抖（手臂、肩、背、腿都看得到肌肉张力），
+赤脚十趾深陷泥地抓地，脚印被泥水填满，
+汗水浸透粗麻短褂背部成深色，
+他完全没有抬头只低头沉重前行，
+午后偏暖光 5000K，背景林场轮廓 + 金尘飞扬，
++ [图像通用尾缀]
+```
+
+#### Seedance 2.0 视频
+```
+Subject 主体：苦工格罗什扛着比自己还高的部落金箱在泥泞红土上前行，肌肉颤抖
+Action 动作：他迈出 5 步前进，每一步都因负重深陷泥泞，脚趾抓地痕迹明显，
+最后一步缓缓停下喘息
+Camera Move 镜头：35mm 侧面跟拍 1.5 秒后镜头缓慢摇低 + 推近至下半身脚踏泥地的特写 1.5 秒
+Style 风格：[视频通用 Style 段]
+Timing 时序：3 秒
+Audio 音频：金币箱内沉重碰撞 + 沉重脚步陷入泥泞 × 5 + 沉重粗喘 + 鼓点缓慢加重
+```
+
+---
+
+### 镜头 #14 · 战士背伤兵（与 #13 严格镜像）
+
+#### Seedream 2.0 关键帧
+```
+中全景侧拍，35mm 镜头（与 #13 完全相同机位），
+战士洛卡背着一名昏迷的战友（中年男兽人，头部缠血绷带、左臂垂下随步伐摆动），
+正从战场尸堆中一步一步踩着泥泞前行向营地方向走，
+肌肉因负重剧烈颤抖（与 #13 同样的肌肉张力表现），
+铁靴深陷泥地抓地，
+战友的盔甲随他步伐发出轻微金属碰撞，
+洛卡完全没有抬头只低头沉重前行，
+午后偏冷光 6000K，背景战场断旗 + 烟雾，
++ [图像通用尾缀]
+```
+
+#### Seedance 2.0 视频
+```
+Subject 主体：战士洛卡背着昏迷战友在泥泞战场上前行，肌肉颤抖，战友手臂随步伐摆动
+Action 动作：他迈出 5 步前进（与 #13 同样的步伐节奏），每一步都因负重深陷泥泞，
+战友的手臂随每一步摆动，最后一步缓缓停下喘息
+Camera Move 镜头：35mm 侧面跟拍 1.5 秒后镜头缓慢摇低 + 推近至下半身脚踏泥地的特写 1.5 秒
+（与 #13 完全相同的运镜）
+Style 风格：[视频通用 Style 段]
+Timing 时序：3 秒（与 #13 节奏完全对齐）
+Audio 音频：战友盔甲轻微碰撞 + 沉重铁靴陷入泥泞 × 5（与 #13 同节奏）+ 沉重粗喘 + 鼓点持续加重
+```
+
+---
+
+### 镜头 #15 · 战士黄昏剪影 ★ 海报候选
+
+#### Seedream 2.0 关键帧
+```
+宽幅 21:9 影院构图，85mm 长焦剪影镜头，
+战场归途的山脊小径上，战士洛卡独自拄着双手战斧站立，背对镜头面向地平线，
+地平线一轮巨大橙红夕阳正在缓缓沉落（占画面下方 1/4），
+他的身影长投影向画面前景延伸，
+晚风轻吹他的灰狼皮披肩 + 战士顶髻发束飘动，
+远景贫瘠之地山脉连绵剪影 + 几棵稀疏沙棘剪影，
+画面只有黑色剪影 + 橙红渐紫天空两个色块，极简留白构图，
+《最后的武士》武士拄刀夕照构图直接致敬，
+色温 4200K 黄金时刻余晖，
++ [图像通用尾缀]
+```
+
+#### Seedance 2.0 视频
+```
+Subject 主体：战士洛卡背对镜头独立站于战场归途山脊，拄战斧面向夕阳
+Action 动作：完全静止站姿，仅有狼皮披肩和顶髻在晚风中轻轻飘动，胸口微微起伏呼吸
+Camera Move 镜头：85mm 长焦完全锁定静止 4 秒，零运动零呼吸感
+Style 风格：[视频通用 Style 段]，海报级极简剪影构图
+Timing 时序：4 秒静止
+Audio 音频：旷野晚风（强）+ 远战吼渐弱至消失 + 大提琴独奏苍凉主题进入
+```
+
+---
+
+### 镜头 #16 · 苦工黄昏剪影（与 #15 严格镜像）★ 海报候选
+
+#### Seedream 2.0 关键帧
+```
+宽幅 21:9 影院构图，85mm 长焦剪影镜头（与 #15 完全相同机位、焦段、构图比例），
+林场归途的红土小径上，苦工格罗什独自拄着劈柴斧站立，背对镜头面向地平线，
+地平线一轮巨大橙红夕阳正在缓缓沉落（与 #15 完全相同的夕阳位置），
+他的身影长投影向画面前景延伸，
+晚风轻吹他的独辫发束飘动 + 粗麻短褂边角飘动，
+远景杜隆塔尔山脉连绵剪影 + 稀疏树木剪影，
+画面只有黑色剪影 + 橙红渐紫天空两个色块（与 #15 完全相同色温），
+《最后的武士》武士拄刀夕照构图致敬，
+色温 4200K 黄金时刻余晖，
++ [图像通用尾缀]
+```
+
+#### Seedance 2.0 视频
+```
+Subject 主体：苦工格罗什背对镜头独立站于林场归途红土小径，拄劈柴斧面向夕阳
+Action 动作：完全静止站姿，仅有独辫和粗麻短褂在晚风中轻轻飘动，胸口微微起伏呼吸
+Camera Move 镜头：85mm 长焦完全锁定静止 3 秒，零运动（与 #15 完全相同的静止机位）
+Style 风格：[视频通用 Style 段]，海报级极简剪影构图
+Timing 时序：3 秒静止
+Audio 音频：旷野晚风（与 #15 相同强度）+ 远千斧齐落渐弱至消失 + 大提琴主题持续
+```
+
+> 验收：把 #15 与 #16 的关键帧在 Photoshop 里 50% 透明度叠加，**人物身体位置应高度重合**。
+> 不重合则重抽。
+
+---
+
+### 镜头 #17 · 篝火 · 递肉干 ★★★ 情感最高点
+
+#### Seedream 2.0 关键帧 17A（中景）
+```
+影院级中景构图，35mm 镜头，
+营地夜晚一座 1.5 米直径石砌篝火坑前，火焰高约 1 米跳动，火星顺着热气上升融入星空，
+篝火两侧木桩座 + 皮垫上坐着卸甲疗伤的兽人战士与吃干粮喝水的苦工分两半，
+战士洛卡卸了披肩、胸前缠着血绷带，端着木碗刚刚走过苦工座位区，他停下了脚步回头看，
+他半边脸被篝火暖橘照亮（1900K）、半边脸沉入冷蓝夜色阴影（7000K）形成强烈双补色明暗对比，
+背景营帐灯光柔和发暖橘琥珀光，远处巡夜哨兵剪影 + 半月星空，
+体积烟雾在火焰上方扭曲成热气流，
+《魔戒》洛汗篝火夜场景质感致敬，
++ [图像通用尾缀]
+```
+
+#### Seedream 2.0 关键帧 17B（双人特写）
+```
+影院级双人特写正面 + 微侧拍，85mm 长焦肖像镜头，
+篝火坑前的木桩座位区，
+左侧战士洛卡正向右侧苦工格罗什伸出右手，掌心摊开一块褐色风干肉干（这是他腰间布袋里最后一块），
+右侧苦工格罗什仰面看向战士，眼神惊愕停在半空，眼眶被火光从下方打亮，眼底湿润但泪未坠落，
+两人脸上都布满疲惫、汗渍、伤痕、烟灰，肤色被火光染暖橘，
+浅景深仅两人面部锋利对焦，背景篝火橙红虚化光斑 + 远处冷蓝夜空虚化星点，
+火光从下方仰打两人脸部形成英雄式戏剧光，
+极致面部细节（毛孔、皱纹、汗珠、獠牙泛光），
++ [图像通用尾缀]
+```
+
+#### Seedance 2.0 视频（一镜两段拍法）
+```
+Subject 主体：营地夜晚篝火坑边，战士洛卡（卸甲带绷带）从苦工座位区走过停步，
+随后转向苦工格罗什从腰间布袋掏出最后一块风干肉干递出
+Action 动作：[第 1 段 0–2 秒] 中景，战士端碗走过画面，停步回头看苦工，
+半边脸被火光照亮半边脸暗影；
+[第 2 段 2–5 秒] 切换至双人特写，战士伸手掏出肉干递向苦工，
+苦工抬头看到，先愣了 0.5 秒，然后双手颤抖着接过肉干
+Camera Move 镜头：第 1 段中景缓慢推进，第 2 段越肩切到双人特写后再缓慢推近
+Style 风格：[视频通用 Style 段]，篝火主光 1900K + 夜空冷蓝补光 7000K 双补色
+Timing 时序：5 秒
+Audio 音频：篝火噼啪 + 远处士兵低语模糊背景声 + 战士脚步 × 4 + 0:50.5 处 0.5 秒关键静音点 +
+布料摩擦 + 木吉他/鲁特琴单旋律温暖切入
+```
+
+---
+
+### 镜头 #18 · 双人台词
+
+#### Seedream 2.0 关键帧 18A（苦工咬肉干笑）
+```
+影院级双人侧面特写，85mm 长焦镜头，
+篝火坑边右侧苦工格罗什刚咬下一口肉干，抬头看向左侧战士，咧嘴露出獠牙微笑，
+火光在獠牙边缘和湿润眼眶中反射出闪光，
+左侧战士洛卡略向右侧倾听姿态，正在回以相同的微笑，
+两人脸上极致疲惫但眼神温暖，
+篝火主光 1900K 暖橘从下方打面，
+浅景深仅两人面部锋利对焦，
++ [图像通用尾缀]
+```
+
+#### Seedream 2.0 关键帧 18B（兄弟敬酒）
+```
+影院级双人侧面中近景，85mm 长焦镜头（与 18A 同机位略拉远），
+苦工格罗什手持咬过的肉干，战士洛卡手持水皮囊，
+两人对视微笑后将食物和水囊朝中间一碰（兄弟敬酒姿态），
+碰撞瞬间火星在两手之间闪烁，
+背景篝火主光 1900K 持续，
+浅景深双人面部 + 两手碰击点同时对焦，
++ [图像通用尾缀]
+```
+
+#### Seedance 2.0 视频（含原生对白生成）
+```
+Subject 主体：篝火坑边相邻坐着的兽人苦工格罗什（右）与兽人战士洛卡（左）
+Action 动作：[0–1.5 秒] 苦工咬一口肉干，抬头看战士，咧嘴露出獠牙微笑，
+低声沙哑地说出 "Work, work."；
+[1.5–3 秒] 战士回以微笑，沉稳低声说出 "For the Horde."，并轻轻点头；
+[3–5 秒] 两人将肉干和水皮囊朝中间一碰像兄弟敬酒，火光在中间闪过
+Camera Move 镜头：85mm 长焦双人侧面特写，缓慢极慢推进，无晃动
+Style 风格：[视频通用 Style 段]，篝火主光 1900K 暖橘人脸 + 冷蓝夜空背景双补色
+Timing 时序：5 秒
+Audio 音频：使用 Seedance 原生对白生成功能，
+苦工台词 "Work, work."（沙哑、带笑、低声、带兽人轻喉音）+
+战士台词 "For the Horde."（沉稳、低沉、带肯定点头节奏）+
+篝火噼啪 + 篝火夜风轻 + 主题段管弦乐缓缓升起
+```
+
+> ⚠️ 提醒：Seedance 2.0 支持原生口型对白生成，但**对台词的"魔兽味"无法保证**。
+> 强烈建议：让 Seedance 出无对白纯口型版本，最后剪辑时**叠加魔兽原版游戏语音**做混音。
+
+---
+
+### 末段 · 字幕收尾（After Effects 制作）
+
+字幕不通过 AI 生成，用 AE 制作。
+
+```
+0:58.0 – 0:59.0   "For the Horde."                    (Trajan Pro Bold, 白色 #FFFFFF, 金色描边 #C9A961)
+0:59.0 – 1:00.0   "And for those who built it."       (同上)
+
+中文版本：
+0:58.0 – 0:59.0   "为了部落。"                          (思源宋体 Heavy, 白色 #FFFFFF, 金色描边 #C9A961)
+0:59.0 – 1:00.0   "也为了筑起部落的他们。"               (同上)
+
+入场动画：每行逐字 Fade In，单行用时 1 秒
+```
+
+---
+
+## 六、抽卡操作建议
+
+### 抽卡顺序（按风险与依赖排序）
 
 | 阶段 | 镜头 | 优先级 | 备注 |
 |------|------|--------|------|
-| 1 | cref 锚定图 | ★★★★★ | 必须先做，否则全乱 |
-| 2 | #5, #8（核心主题镜） | ★★★★★ | 最难做对，先攻克 |
-| 3 | #6, #7（CG 大场面） | ★★★★★ | 最贵，预算重头 |
-| 4 | #15, #16（黄昏海报镜） | ★★★★ | 必须严格镜像 |
-| 5 | #17（情感高点） | ★★★★ | 表演难，多抽 |
+| 1 | 角色锚定图（格罗什 / 洛卡） | ★★★★★ | **必须先做**，否则下游全乱 |
+| 2 | #5 / #8 双线核心镜像 | ★★★★★ | 最难做对，先攻克镜像剪辑技术验证 |
+| 3 | #6 / #7 双线 CG 大场面 | ★★★★★ | 最贵，集中预算 |
+| 4 | #15 / #16 黄昏海报镜 | ★★★★ | 海报候选，必须严格镜像 |
+| 5 | #17 篝火情感高点 | ★★★★ | 表演难，多抽 |
 | 6 | 其他普通镜头 | ★★★ | 标准抽卡 |
 
-### 抽卡预算预估
+### Seedance 2.0 抽卡预算预估（参考即梦官方 / 第三方平台计费）
 
-| 镜头类型 | 单镜抽卡次数 | 单次成本（Veo 3 估算） | 单镜成本 |
-|---------|------------|---------------------|---------|
-| 大场面 (#6, #7) | 30 次 | ¥30 | ¥900 / 镜 |
-| 核心主题 (#5, #8, #15-#16, #17) | 20 次 | ¥30 | ¥600 / 镜 |
-| 普通镜 (其他) | 8 次 | ¥30 | ¥240 / 镜 |
-| **合计** | **约 200 次** | | **约 ¥6000** |
+> 即梦 Seedance 2.0 当前主流计费方式：**约 ¥1.5–¥3 / 秒视频生成**，单段 5 秒视频成本约 ¥10–¥15。
+> 预算按 ¥15/段 折中估算。
 
-> Kling / Hailuo 比 Veo 3 便宜约 1/3，可用于普通镜头降低成本。
-> 关键镜头（#6, #7, #8, #17）务必用 Veo 3。
+| 镜头类型 | 单镜抽卡次数 | 单次成本 | 单镜成本 |
+|---------|------------|---------|---------|
+| CG 大场面 (#6, #7) | 30 次 | ¥15 | ¥450 / 镜 |
+| 核心主题镜 (#5, #8, #15-16, #17, #18) | 20 次 | ¥15 | ¥300 / 镜 × 6 = ¥1800 |
+| 普通镜（#1–#4、#9–#14） | 8 次 | ¥15 | ¥120 / 镜 × 12 = ¥1440 |
+| **合计** | **约 270 次** | | **约 ¥4140** |
 
-### 抽卡验收标准
+> Seedream 2.0/3.0 关键帧出图便宜很多，每次约 ¥0.3–¥0.5，
+> 18 镜 × 10 次抽卡 ≈ ¥80。**图像成本相对忽略不计**。
 
-每个镜头出来后，逐项检查：
+### 抽卡验收标准（每个镜头出来后逐项检查）
 
-- [ ] 角色脸部与 cref 锚定图一致度 ≥ 80%
-- [ ] 关键道具特征齐全（疤、纹身、武器特征）
-- [ ] 运镜符合本表 Prompt 描述
-- [ ] 时长接近目标（±0.5 秒可接受）
-- [ ] 光照色温符合调色规范
-- [ ] 没有 AI 瑕疵（多手指、扭曲面孔、透视错误）
-- [ ] 镜像组（#3-#4 等）构图重合度 ≥ 80%
+- [ ] 角色脸部与锚定图一致度 ≥ 80%（用 Photoshop 50% 透明叠加肉眼比对）
+- [ ] 关键道具特征齐全（疤、纹身、武器特征、肉干袋等）
+- [ ] 运镜符合 Seedance prompt Camera Move 段描述
+- [ ] 时长接近目标（±0.3 秒可接受）
+- [ ] 光照色温符合视听风格规范的色温对位
+- [ ] 没有 AI 瑕疵：多手指、扭曲面孔、透视错误、半透明物体、闪烁
+- [ ] **关键否定词验证**：画面无油画质感 / 卡通感 / 暴雪 stylized 残影 / 塑料皮肤
+- [ ] 镜像组（#3-4、#5、#9-10、#13-14、#15-16）构图重合度 ≥ 80%
